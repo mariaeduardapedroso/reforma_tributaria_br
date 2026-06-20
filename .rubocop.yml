@@ -1,0 +1,16 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+
+# Documentação de classe/módulo não é obrigatória.
+Style/Documentation:
+  Enabled: false
+
+# Blocos longos são esperados em specs e no gemspec.
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - "*.gemspec"
+
+Metrics/MethodLength:
+  Max: 15

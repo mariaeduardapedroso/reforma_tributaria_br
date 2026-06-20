@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+bundle install
+
+# Coloque aqui qualquer outro passo de preparação do ambiente de desenvolvimento.

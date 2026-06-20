@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: Publicar no RubyGems
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: write   # criar a GitHub Release
+      id-token: write   # trusted publishing (OIDC) no RubyGems
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      # Publica no rubygems.org via trusted publishing (sem API key armazenada).
+      # Requer configurar o "trusted publisher" pendente em rubygems.org uma vez.
+      - name: Publicar gem
+        uses: rubygems/release-gem@v1
