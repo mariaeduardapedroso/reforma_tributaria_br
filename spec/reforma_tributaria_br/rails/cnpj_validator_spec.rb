@@ -9,6 +9,7 @@ RSpec.describe "CnpjValidator (integração ActiveModel)" do
     Class.new do
       include ActiveModel::Validations
       attr_accessor :cnpj
+
       validates :cnpj, cnpj: true
 
       def self.name
@@ -36,6 +37,7 @@ RSpec.describe "CnpjValidator (integração ActiveModel)" do
       Class.new do
         include ActiveModel::Validations
         attr_accessor :cnpj
+
         validates :cnpj, cnpj: { normalizar: true }
 
         def self.name

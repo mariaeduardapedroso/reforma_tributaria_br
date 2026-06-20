@@ -26,3 +26,17 @@ Metrics/MethodLength:
 
 Layout/LineLength:
   Max: 120
+
+# "is" é um nome de argumento legítimo aqui (Imposto Seletivo).
+Naming/MethodParameterName:
+  AllowedNames:
+    - is
+    - id
+    - to
+    - by
+    - in
+    - on
+
+# Tokens %s no format() são aceitáveis.
+Style/FormatStringToken:
+  EnforcedStyle: unannotated

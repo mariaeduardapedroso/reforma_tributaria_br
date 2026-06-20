@@ -41,9 +41,7 @@ module ReformaTributariaBr
     # Retorna uma String de 2 dígitos (ex.: "81").
     def dv(base)
       base = normalizar(base)
-      unless base.match?(BASE_REGEX)
-        raise CnpjInvalido, "base deve ter 12 caracteres alfanuméricos: #{base.inspect}"
-      end
+      raise CnpjInvalido, "base deve ter 12 caracteres alfanuméricos: #{base.inspect}" unless base.match?(BASE_REGEX)
 
       d1 = calcular_digito(base, PESOS_DV1)
       d2 = calcular_digito(base + d1.to_s, PESOS_DV2)

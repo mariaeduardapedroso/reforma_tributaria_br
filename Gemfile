@@ -6,8 +6,8 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
+  gem "activemodel", ">= 6.0" # usado apenas para testar a integração Rails
   gem "rake", "~> 13.0"
   gem "rspec", "~> 3.13"
   gem "rubocop", "~> 1.60"
-  gem "activemodel", ">= 6.0" # usado apenas para testar a integração Rails
 end
