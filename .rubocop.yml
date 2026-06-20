@@ -1,12 +1,21 @@
 AllCops:
   TargetRubyVersion: 3.0
-  NewCops: enable
+  # Cops novos ("pending") só avisam, não quebram o build.
+  NewCops: disable
+  SuggestExtensions: false
+
+# Convenção padrão de gems: aspas duplas.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
 
 # Documentação de classe/módulo não é obrigatória.
 Style/Documentation:
   Enabled: false
 
-# Blocos longos são esperados em specs e no gemspec.
+# Blocos longos são esperados em specs, no gemspec e em Struct.new.
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
@@ -14,3 +23,6 @@ Metrics/BlockLength:
 
 Metrics/MethodLength:
   Max: 15
+
+Layout/LineLength:
+  Max: 120
